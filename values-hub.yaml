@@ -38,12 +38,18 @@ clusterGroup:
         kind: ManagedClusterInfo
         jsonPointers:
           - /spec/loggingCA
-          
+
     kafka:
       name: kafka
       namespace: lab-cluster
       project: lab-project
       path: charts/all/kafka
+
+    kafdrop: 
+      name: kafdrop
+      namespace: lab-kafka
+      project: lab-project
+      path: charts/all/kafdrop
 
     vault:
       name: vault
