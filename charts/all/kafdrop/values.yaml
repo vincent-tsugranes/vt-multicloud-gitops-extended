@@ -149,8 +149,8 @@ config:
   ## Can be declared as slice or single string
   ##
   jvm:
-    - "-Xms128M"
-    - "-Xmx256M"
+    - "-Xms256M"
+    - "-Xmx512M"
 
   ## Kafdrop additional commandline arguments
   ## Can be declared as slice or single string
