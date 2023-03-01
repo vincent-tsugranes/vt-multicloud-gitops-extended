@@ -1,0 +1,16 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: hello-world-rb
+  namespace: hello-world
+  annotations:
+    argocd.argoproj.io/hook: PreSync
+subjects:
+- kind: ServiceAccount
+  name: default
+  namespace: hello-world
+  apiGroup: ""
+roleRef:
+  kind: Role
+  name: hello-world-view-deployments-role
+  apiGroup: rbac.authorization.k8s.io

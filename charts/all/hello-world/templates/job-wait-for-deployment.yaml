@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+  name: job-wait-for-deployment
+  namespace: hello-world
+spec:
+  template:
+    spec:
+      containers:
+      - image: image-registry.openshift-image-registry.svc:5000/openshift/cli
+        command:
+        - /bin/bash
+        - -c
+        - |
+          oc wait --for=condition=Available=true deployment/hello-world -n hello-world --timeout=900s
+        name: wait-for-helloworld-deployment
+      dnsPolicy: ClusterFirst
+      restartPolicy: Never
+      serviceAccount: default
+      terminationGracePeriodSeconds: 60
