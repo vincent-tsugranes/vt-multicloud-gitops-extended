@@ -114,8 +114,7 @@ config:
     ##
     connections:
     #  - localhost:9092
-    #  - lab-cluster-kafka-brokers.lab-kafka.svc.cluster.local:9092
-      - '{{ .Values.hub.kafka.namespace }}-kafka-brokers.{{ .Values.hub.kafkadrop.namespace }}.svc.cluster.local:9092'
+      - lab-cluster-kafka-brokers.lab-kafka.svc.cluster.local:9092
 
     ## Kafka Properties Configuration
     ##
