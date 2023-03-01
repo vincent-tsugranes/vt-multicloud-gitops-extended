@@ -56,3 +56,5 @@ spec:
         configMap:
           defaultMode: 438
           name: hello-world-configmap
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"

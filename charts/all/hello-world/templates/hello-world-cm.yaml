@@ -4,6 +4,8 @@ metadata:
   name: hello-world-configmap
   labels:
     app.kubernetes.io/instance: hello-world
+  annotations:
+    argocd.argoproj.io/hook: PreSync
 data:
   "index.html": |-
     <!DOCTYPE html>
