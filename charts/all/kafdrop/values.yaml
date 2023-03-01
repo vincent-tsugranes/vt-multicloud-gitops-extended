@@ -96,7 +96,7 @@ proxy:
 
 ## Define Container Timezone
 # timezone -- Define Container Timezone (Sets TZ Environment)
-timezone: "Europe/Zurich"
+timezone: "UTC"
 
 ## Kafdrop Configuration
 ## Defines values which will be set as environment variable for the
@@ -113,7 +113,9 @@ config:
     ## a comma separated string
     ##
     connections:
-      - localhost:9092
+    #  - localhost:9092
+    #  - lab-cluster-kafka-brokers.lab-kafka.svc.cluster.local:9092
+      - '{{ .Values.hub.kafka.namespace }}-kafka-brokers.{{ .Values.hub.kafkadrop.namespace }}.svc.cluster.local:9092'
 
     ## Kafka Properties Configuration
     ##
