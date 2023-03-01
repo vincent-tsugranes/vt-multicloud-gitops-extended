@@ -8,6 +8,7 @@ clusterGroup:
     - golang-external-secrets
     - config-demo
     - hello-world
+    - lab-kafka
 
   subscriptions:
     acm:
@@ -15,6 +16,10 @@ clusterGroup:
       namespace: open-cluster-management
       channel: release-2.6
       #csv: advanced-cluster-management.v2.6.1
+    amq-streams:
+      name: amq-streams
+      namespace: lab-kafka
+      chanel: stable
 
   projects:
     - hub
