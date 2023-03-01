@@ -4,6 +4,8 @@ metadata:
   labels:
     application: hello-world
   name: hello-world
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   replicas: 1
   revisionHistoryLimit: 3
@@ -56,5 +58,3 @@ spec:
         configMap:
           defaultMode: 438
           name: hello-world-configmap
-  annotations:
-    argocd.argoproj.io/sync-wave: "1"
