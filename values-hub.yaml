@@ -25,6 +25,7 @@ clusterGroup:
     - hub
     - config-demo
     - hello-world
+    - lab-project
 
   applications:
     acm:
@@ -37,6 +38,12 @@ clusterGroup:
         kind: ManagedClusterInfo
         jsonPointers:
           - /spec/loggingCA
+          
+    kafka:
+      name: kafka
+      namespace: lab-cluster
+      project: lab-project
+      path: charts/all/kafka
 
     vault:
       name: vault
