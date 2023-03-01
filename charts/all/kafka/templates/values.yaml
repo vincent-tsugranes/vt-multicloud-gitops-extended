@@ -1,3 +1,0 @@
-global:
-  testlab:
-    namespace: lab-kafka
